@@ -1,14 +1,29 @@
 const express = require('express')
 
 const app = express()
+const cors = require('cors')
 const PORT = 8000
 
-const rappers = {
-  'age': 29,
-  'birthName': 'Shéyaa Bin Abraham-Joseph' ,
-  'birthLocation': 'London, England'
-}
+app.request(cors())
 
+const rappers = {
+  '21 savage':{
+    'age': 29,
+    'birthName': 'Sheyaa Bin Abraham-Joseph',
+    'birthLocation': 'London, England'
+  },
+  'chance the rapper':{
+    'age': 28,
+    'birthName': 'Chancellor Bennett',
+    'birthLocation': 'Chicago, Illinois'
+  },
+  'dylan':{
+    'age': 29,
+    'birthName': 'Dylan',
+    'birthLocation': 'Dylan'
+  }
+  
+}
 
 app.get('/', (request, res) => {
   res.sendFile(__dirname + '/index.html')
@@ -24,7 +39,7 @@ app.get('/api/:name', (req, res) =>{
   
 })
 
-app.listen( PORT , () => {
-  console.log(`The server is now running on port ${PORT}! Go catch the mofo`)
+app.listen( procsess.env.PORT || PORT , () => {
+  console.log(`The server is now running on port ${PORT}! Go catch that mofo`)
 
 })
