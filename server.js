@@ -4,7 +4,7 @@ const app = express()
 const cors = require('cors')
 const PORT = 8000
 
-app.request(cors())
+app.use(cors())
 
 const rappers = {
   '21 savage':{
@@ -25,7 +25,7 @@ const rappers = {
   
 }
 
-app.get('/', (request, res) => {
+app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html')
 })
 
